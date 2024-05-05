@@ -1,0 +1,43 @@
+.mainContainerForAddTodo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--WHITE);
+  padding: 20px;
+  box-shadow: var(--BOX_SHADOW_COLOR);
+  z-index: 1000;
+  width: 450px;
+  height: 300px;
+}
+.innerPopupContainer {
+  margin-top: 30px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--OVERLAY_COLOR);
+  z-index: 900;
+  display: none;
+}
+
+.overlay.show {
+  display: block;
+}
+
+.addItemText {
+  margin-bottom: 15px;
+}
+
+.addTodoButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  width: 100%;
+  margin-top: 30px;
+}

@@ -1,0 +1,75 @@
+@import "./sass/responsivness.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/roboto/Roboto-Regular.ttf");
+}
+
+:root {
+  --BLACK: #000000;
+  --WHITE: #ffffff;
+  --ERROR_MESSAGE_COLOR: #d4375c;
+  --BUTTON_COLOR: #5a4ee6;
+  --DASHBOARD_COLOR: #f5f8fa;
+  --EDIT_COLOR: #ffe4c4;
+  --DELETE_COLOR: #ffbab9;
+  --GREY_BORDER_COLOR: rgba(211, 211, 211, 0.378);
+  --BOX_SHADOW_COLOR: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --OVERLAY_COLOR: rgba(0, 0, 0, 0.5);
+  --CARD_BOX_SHADOW_COLOR: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+.btn-primary {
+  background-color: var(--BUTTON_COLOR);
+  color: var(--WHITE);
+  padding: 10px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cancel-btn {
+  @extend .btn-primary;
+  border: 1px solid var(--ERROR_MESSAGE_COLOR);
+  color: var(--ERROR_MESSAGE_COLOR);
+  background-color: unset;
+}
+
+.edit-btn {
+  background-color: var(--EDIT_COLOR);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.delete-btn {
+  @extend .edit-btn;
+  background-color: var(--DELETE_COLOR);
+}
+
+select {
+  padding: 8px 30px 8px 10px;
+  border: 1px solid var(--GREY_BORDER_COLOR);
+  border-radius: 4px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid var(--GREY_BORDER_COLOR);
+  border-radius: 4px;
+  width: 100% !important;
+}

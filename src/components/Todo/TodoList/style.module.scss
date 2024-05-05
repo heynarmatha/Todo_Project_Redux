@@ -1,0 +1,66 @@
+.dashboardContainerTodo {
+  padding: 20px;
+  background-color: var(--DASHBOARD_COLOR);
+  height: 100vh;
+  .subContainerForTodo {
+    width: 80%;
+    margin: 0 auto;
+    .headerContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .flexStyleForFilter {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 40px;
+    }
+    .cardList {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      row-gap: 10px;
+      column-gap: 10px;
+      .card {
+        display: flex;
+        justify-content: space-between;
+        box-shadow: var(--CARD_BOX_SHADOW_COLOR);
+        background-color: var(--WHITE);
+        border-radius: 5px;
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        .todoTitle {
+          font-size: 14px;
+          margin-bottom: 15px;
+        }
+        .btnContainer {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+        }
+        .btnContainerSaveEdit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 10px;
+          margin-top: 20px;
+        }
+      }
+    }
+    .flexStyle {
+      display: flex;
+      align-items: center;
+    }
+    .lableStyle {
+      margin-right: 5px;
+      color: gray;
+    }
+    .editInput {
+      width: 80%;
+    }
+  }
+}
