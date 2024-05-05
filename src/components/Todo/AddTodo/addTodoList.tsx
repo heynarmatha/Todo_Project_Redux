@@ -13,15 +13,19 @@ const AddTodoPopup: React.FC<Props> = ({
   showAddTaskPopup,
   setShowAddTaskPopup,
 }) => {
+  // State to manage the input value
   const [title, setTitle] = useState("");
   const dispatch = useDispatch();
 
+  // Function to handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Check if title is empty
     if (title.trim() === "") {
       alert("Item cannot be empty");
       return;
     }
+    // Dispatch addTodo action with new todo object
     dispatch(
       addTodo({
         id: Date.now(),
@@ -29,6 +33,7 @@ const AddTodoPopup: React.FC<Props> = ({
         status: TODO_STATUS_OPTIONS?.[0],
       })
     );
+    // Clear input and close popup
     setTitle("");
     setShowAddTaskPopup(false);
   };

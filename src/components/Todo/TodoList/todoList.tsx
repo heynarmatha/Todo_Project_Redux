@@ -9,23 +9,27 @@ import { TodoStatus, TODO_STATUS_OPTIONS } from "../../../utity/constants";
 import { EditTodo } from "../../../utity/typescript";
 import AddTodoPopup from "../AddTodo/addTodoList";
 import styles from "./style.module.scss";
-import { FiChevronDown, FiEdit2 } from "react-icons/fi";
+import { FiEdit2 } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 
 const TodoListDashboard: React.FC = () => {
+  // Redux state management
   const todos = useSelector(selectTodos);
   const [filter, setFilter] = useState<TodoStatus | "all">("all");
   const [showAddTaskPopup, setShowAddTaskPopup] = useState(false);
   const [editTodo, setEditTodo] = useState<EditTodo | null>(null);
   const dispatch = useDispatch();
 
+  // Toggle add task popup
   const toggleAddTaskPopup = () => {
     setShowAddTaskPopup(!showAddTaskPopup);
   };
 
+  // Filter todos based on selected status
   const filteredTodos =
     filter === "all" ? todos : todos.filter((todo) => todo.status === filter);
 
+  // Delete todo item
   const handleDelete = (id: number) => {
     dispatch(deleteTodo(id));
     if (editTodo?.id === id) {
@@ -33,10 +37,12 @@ const TodoListDashboard: React.FC = () => {
     }
   };
 
+  // Edit todo item
   const handleEdit = (todo: EditTodo) => {
     setEditTodo(todo);
   };
 
+  // Save edited todo item
   const handleSaveChanges = (editedTodo: EditTodo) => {
     if (editedTodo.title.trim() === "") {
       alert("Item cannot be empty");
@@ -52,10 +58,12 @@ const TodoListDashboard: React.FC = () => {
     setEditTodo(null);
   };
 
+  // Cancel edit
   const handleCancelEdit = () => {
     setEditTodo(null);
   };
 
+  // Handle title change for editing
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (editTodo) {
       setEditTodo({
@@ -193,6 +201,7 @@ const TodoListDashboard: React.FC = () => {
           </ul>
         </div>
       </div>
+      {/* AddTodoPopup component for adding new todos */}
       <AddTodoPopup
         showAddTaskPopup={showAddTaskPopup}
         setShowAddTaskPopup={setShowAddTaskPopup}
