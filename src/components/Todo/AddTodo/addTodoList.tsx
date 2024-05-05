@@ -37,7 +37,6 @@ const AddTodoPopup: React.FC<Props> = ({
     setTitle("");
     setShowAddTaskPopup(false);
   };
-
   return (
     <>
       {showAddTaskPopup && (
